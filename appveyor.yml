@@ -4,9 +4,7 @@ environment:
   matrix:
   - GENERATOR: '"Visual Studio 15 2017"'
     BUILD_TYPE: Release
-  - PYTHON: "C:\\Python36"
-    PYTHON_VERSION: "3.6.5" # currently 3.6.5
-    PYTHON_ARCH: "32"
+    
 init:
 - git config --global core.autocrlf true
 install:
