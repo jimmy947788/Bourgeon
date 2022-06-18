@@ -22,5 +22,6 @@ build_script:
     cmake --build . --config %BUILD_TYPE%
 
 artifacts:
-  - path: C:\projects\bourgeon\build\src\Release\ddraw.dll
+  - path: build/src/Release/ddraw.dll
+
 test: off
