@@ -1,7 +1,7 @@
 version: 0.1.0-{build}
 image: Visual Studio 2017
 environment:
-  PY_DIR: C:/Python3.6
+  PY_DIR: C:/Python39 # appveyor提供python版本: https://www.appveyor.com/docs/windows-images-software/#python
   matrix:
   - GENERATOR: '"Visual Studio 15 2017"'
     BUILD_TYPE: Release
