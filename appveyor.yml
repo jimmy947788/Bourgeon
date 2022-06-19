@@ -1,17 +1,16 @@
 version: 0.1.0-{build}
 image: Visual Studio 2017
 environment:
-  PY_DIR: C:/Python39 # appveyor提供python版本: https://www.appveyor.com/docs/windows-images-software/#python
   matrix:
   - GENERATOR: '"Visual Studio 15 2017"'
     BUILD_TYPE: Release
     
 init:
-- cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
 - git config --global core.autocrlf true
 install:
 - git submodule update --init --recursive
 build_script:
+# appveyor提供python版本: https://www.appveyor.com/docs/windows-images-software/#python
 - cmd: >-
     mkdir build
 
@@ -19,7 +18,7 @@ build_script:
 
     cmake .. -G %GENERATOR% -DCMAKE_BUILD_TYPE=%BUILD_TYPE%
 
-    cmake --build . --config %BUILD_TYPE%
+    cmake --build . --config %BUILD_TYPE% DPYTHON_EXECUTABLE:FILEPATH="C:\Python39\python.exe"
 
 artifacts:
   - path: build/src/Release/ddraw.dll
