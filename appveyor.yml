@@ -16,9 +16,9 @@ build_script:
 
     cd build
 
-    cmake .. -G %GENERATOR% -DCMAKE_BUILD_TYPE=%BUILD_TYPE%
+    cmake .. -G %GENERATOR% -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -DPYTHON_EXECUTABLE:FILEPATH="C:\Python39\python.exe"
 
-    cmake --build . --config %BUILD_TYPE% DPYTHON_EXECUTABLE:FILEPATH="C:\Python39\python.exe"
+    cmake --build . --config %BUILD_TYPE% 
 
 artifacts:
   - path: build/src/Release/ddraw.dll
